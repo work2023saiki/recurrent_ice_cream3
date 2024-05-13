@@ -24,11 +24,19 @@ public class Login extends HttpServlet {
   protected void doGet(HttpServletRequest request1, HttpServletResponse response1) throws ServletException, IOException {
 	  RequestDispatcher dispatcher = request1.getRequestDispatcher("WEB-INF/jsp/account/login.jsp");
       dispatcher.forward(request1, response1);   //フォワードはjspフォルダ内に置く
+      
+      /*
+      KeisanAgeDAO dao = new KeisanAgeDAO();
+      List<AccountBean> test = dao.findAccount();
+      System.out.println(test);
+      System.out.println(test.get(0).getAge());
+      */
+      
   }  
 
   protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     // 入力した名前、パスワードを取得
-    request.setCharacterEncoding("UTF-8");
+    //request.setCharacterEncoding("UTF-8");
     String name = request.getParameter("name");
     String password = request.getParameter("password");
     
@@ -56,12 +64,17 @@ public class Login extends HttpServlet {
 	//見つかったとき
     //ログイン成功
     else {
+    	
+    	
     	//セッションスコープに保存。マイページに表示するため
     	HttpSession session = request.getSession();
+    	
+    	
     	session.setAttribute("accountInfo", accountInfo);
     	
     	//System.out.println(accountInfo.getName());
-    	response.sendRedirect("http://localhost:8080/recurrent_ice_cream/catalogpage.jsp"); 
+    	RequestDispatcher dispatcher = request.getRequestDispatcher("/ProductServlet");
+    	dispatcher.forward(request, response);
     }
 	
   }
