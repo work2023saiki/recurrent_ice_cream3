@@ -44,12 +44,9 @@ public class Login extends HttpServlet {
     SHA256 pass = new SHA256();
     String hashpass = pass.createHash(password);
     
-    //入力情報をaccountインスタンスに保存。
-    AccountBean account = new AccountBean(name, hashpass);
-    
     //データベースに接続。アカウント情報を見つけて取得する。
     LoginDAO dao = new LoginDAO();
-	AccountBean accountInfo = dao.findAccount(account);
+	AccountBean accountInfo = dao.findAccount(name, hashpass);
 	
 	// アカウント情報が見つからなかったとき。
 	// ログイン失敗

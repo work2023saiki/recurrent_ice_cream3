@@ -19,7 +19,7 @@ public class LoginDAO extends ConfigDB{
   AccountBean accountInfo = null;
   
   
-  public AccountBean findAccount(AccountBean account) {
+  public AccountBean findAccount(String name, String password) {
 	 
 	//親クラスConfigDBのメソッドを利用
 	ReadJDBC_Driver();
@@ -35,8 +35,8 @@ public class LoginDAO extends ConfigDB{
       PreparedStatement pStmt = conn.prepareStatement(sql);
       
       //WHERE文の?に代入
-      pStmt.setString(1, account.getName());
-      pStmt.setString(2, account.getPassword());
+      pStmt.setString(1, name);
+      pStmt.setString(2, password);
 
       
       // SELECTを実行し、結果表を取得
@@ -46,15 +46,15 @@ public class LoginDAO extends ConfigDB{
 	      while (rs.next()) {
 
 	        int accountID = rs.getInt("アカウントID"); 
-	    	String name = rs.getString("氏名");
-	    	String password = rs.getString("パスワード");
+	    	String name2 = rs.getString("氏名");
+	    	String password2 = rs.getString("パスワード");
 	        String mailAd = rs.getString("メールアドレス");
 	        String gender = rs.getString("性別");
 	        Date birthday = rs.getDate("生年月日"); 
 	        String homeAd = rs.getString("住所");
 	        
 	          
-	        accountInfo = new AccountBean(accountID, name, password, mailAd, gender, birthday, homeAd);
+	        accountInfo = new AccountBean(accountID, name2, password2, mailAd, gender, birthday, homeAd);
 
 	      }
 	      
