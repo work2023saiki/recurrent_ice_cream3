@@ -1,0 +1,13 @@
+/* テーブルを作成するSQL。アカウント登録できたらこのテーブルに情報を入れる。
+
+*/
+
+CREATE TABLE アカウント (アカウントID INTEGER  NOT NULL AUTO_INCREMENT,
+氏名 VARCHAR(50)  NOT NULL UNIQUE,
+パスワード VARCHAR(1000) NOT NULL,
+メールアドレス VARCHAR(50)  NOT NULL,
+性別 VARCHAR(3)  NOT NULL,
+生年月日 DATE  NOT NULL,
+住所 VARCHAR(50)  NOT NULL,
+PRIMARY KEY (アカウントID)
+);
