@@ -23,4 +23,4 @@
         <a href="catalogpage.jsp" class="back-btn">戻る</a>
     </div>
 </body>
-</html>
+</html> 
