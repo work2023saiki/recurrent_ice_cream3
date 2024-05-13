@@ -51,8 +51,8 @@
 		    <tr>
 		        <th>商品ID</th>
 		        <th>商品名</th>
-		        <th>商品説明</th>
-		        <th>単価</th>		        
+		        <th>商品価格</th>
+		        <th>商品説明</th>		        		        
 		    </tr>
 	
 		    <c:forEach var="item" items="${ItemList}" varStatus="status">
@@ -61,9 +61,9 @@
 		        <form action="?" method="post">
 		            <td><c:out value="${item.itemID}" /></td>
 		            <td><c:out value="${item.itemName}" /></td>
-		            <td><c:out value="${item.itemExplain}" /></td>
 		            <td><c:out value="${item.price}"/></td>
-		            <td><button type="submit" formaction="MyPageEdit2">編集</button></td>
+		            <td><c:out value="${item.itemExplain}" /></td>
+		            <td><button type="submit" formaction="ItemEdit2">編集</button></td>
 		            <td><button type="submit" name="button" value=<c:out value="${item.itemID}"/> formaction="DeleteItem">削除</button></td>
                  
                     <input type="hidden" name="loopIndex" value=<c:out value="${status.index}"/>>	        

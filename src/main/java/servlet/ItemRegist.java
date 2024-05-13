@@ -40,7 +40,7 @@ public class ItemRegist extends HttpServlet {
 	
     //登録OK
     if(newItem) {
-    	request.setAttribute("Msg", "登録しました！");
+    	request.setAttribute("Msg", "登録しました！もう一度検索してください");
     	
 		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/admin_ItemEdit.jsp");
         dispatcher.forward(request, response);
@@ -49,7 +49,7 @@ public class ItemRegist extends HttpServlet {
     //登録できないとき
 	else {
 		// P305のコード10-16を参照
-		request.setAttribute("errorMsg", "アカウント登録できませんでした");
+		request.setAttribute("errorMsg", "商品登録できませんでした");
 				
 		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/admin_ItemEdit.jsp");
         dispatcher.forward(request, response);
