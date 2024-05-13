@@ -41,14 +41,16 @@ public class MyPageEdit3 extends HttpServlet {
 	    System.out.println(accountList);	     
 	    MyPageEditDAO dao = new MyPageEditDAO();	    
 	    dao.update(account3);
-
-    	//user_mypage.jspに更新内容を表示
-    	accountList.get(accountID).setName(name);
-    	//accountList.get(accountID).setMailAd(mailAd);
-    	//accountList.get(accountID).setHomeAddress(homeAd);
+	   
+	      //すっきりサーブレットP232参考
+		  session.removeAttribute("accountList");
+		  
+		  request.setAttribute("Msg", "編集しました。もう一度検索してください。");
     	
     	RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/admin_accountEdit.jsp");
         dispatcher.forward(request, response);
 	    
   }
+  
+  
 }
