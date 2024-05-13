@@ -14,10 +14,9 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
 
-@WebServlet("/ProductServlet")
-public class ProductServlet extends HttpServlet {
+@WebServlet("/Old_ProductServlet")
+public class Old_ProductServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {    
     	// リクエストの処理
     	try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/recurrent_ice_cream", "root", "moo0921too")) {
@@ -27,10 +26,8 @@ public class ProductServlet extends HttpServlet {
     	    List<Product> products = productDAO.getAllProducts();
 
     	    // 商品情報をリクエスト属性に設定
-    	    HttpSession session = request.getSession();
-        	
-        	session.setAttribute("products", products);
-    	    
+    	    request.setAttribute("products", products);
+
     	    // JSPにフォワード
     	    RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/products.jsp");
     	    dispatcher.forward(request, response);

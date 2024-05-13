@@ -46,23 +46,26 @@
 package servlet;
 
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 
-import beans.PurchaseBean;
-import dao.PurchaseDAO;
+import beans.Product;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 @WebServlet("/AddToCartServlet")
 public class AddToCartServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // カートに追加された商品の情報を取得
+    
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        
+    	/*
+    	// カートに追加された商品の情報を取得
         Map<String, Integer> cartItems = new HashMap<>();
         for (Map.Entry<String, String[]> entry : request.getParameterMap().entrySet()) {
             String paramName = entry.getKey();
@@ -87,5 +90,35 @@ public class AddToCartServlet extends HttpServlet {
         } else {
 
         }
+        
+        */
+    	
+    	
+    	
+    	
+        HttpSession session = request.getSession();
+    	
+    	
+        @SuppressWarnings("unchecked")
+		List<Product> productList = (List<Product>)session.getAttribute("products");
+       
+        
+        List<String> kosuList = new ArrayList<String>();
+        
+        // リクエストパラメータを取得
+        request.setCharacterEncoding("UTF-8");
+        
+        
+        //https://www.sejuku.net/blog/15715#index_id0
+        //https://style.potepan.com/articles/18052.html#JavaintString
+        for(int i=0; i < productList.size(); i++) {
+           String kosu = request.getParameter(String.valueOf(i));
+           kosuList.add(kosu);
+        }
+        System.out.println(kosuList);
+        
+    	
+    	
+    	
     }
 }

@@ -55,14 +55,14 @@
                 <th>商品説明</th>
                 <th>数量</th>
             </tr>
-            <c:forEach var="product" items="${products}" varStatus="status">
+            <c:forEach var="product" items="${products}" >
                 <tr>
                     <td><c:out value="${product.id}" /></td>
                     <td><c:out value="${product.name}" /></td>
                     <td><c:out value="${product.price}" /></td>
                     <td><c:out value="${product.description}" /></td> <!-- 商品説明を追加 -->
                     <td>
-                        <select name= "${status.index}" >
+                        <select name="quantity_${product.id}">
                             <c:forEach begin="0" end="10" var="num">
                                 <option value="${num}">${num}</option>
                             </c:forEach>

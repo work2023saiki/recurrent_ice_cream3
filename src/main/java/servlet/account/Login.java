@@ -62,14 +62,11 @@ public class Login extends HttpServlet {
     //ログイン成功
     else {
     	
-    	
     	//セッションスコープに保存。マイページに表示するため
     	HttpSession session = request.getSession();
     	
-    	
     	session.setAttribute("accountInfo", accountInfo);
     	
-    	//System.out.println(accountInfo.getName());
     	RequestDispatcher dispatcher = request.getRequestDispatcher("/ProductServlet");
     	dispatcher.forward(request, response);
     }
