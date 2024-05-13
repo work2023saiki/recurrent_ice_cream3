@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin MyPage</title>
+</head>
+<body>
+    <form name="MyPage" action="" method="post"></form>
+    <h1>管理者マイページ</h1>
+    <p>商品の編集</p>
+    <div class="search">
+        <p>商品ID:
+        <input type="text" name="name"> <input type="button" value="検索" id="button">
+    </p></div>
+    <div class="registration">
+        <p><input type="number" name="itemID" placeholder="商品ID"><input type="text" name="itemName" placeholder="商品名">
+        <input type="text" name="itemExplain" placeholder="商品説明"><input type="text" name="price" placeholder="商品価格">
+        <button type="submit">登録</button></p>
+
+
+    </div>
+    <div class="edit">
+        <table border="1">
+            <tr>
+              <th>商品ID</th>
+              <th>商品名</th>
+              <th>商品説明文</th>
+              <th>価格</th>
+              <th></th>
+              <th></th>
+            </tr>
+            <tr>
+              <td>itemID</td>
+              <td>itemName</td>
+              <td>itemExplain</td>
+              <td>price</td>
+              <td><button type="submit">編集</button></td>
+              <td><button type="submit">削除</button></td>
+            </tr>
+
+          </table>
+    </div>
+              
+        <p>会員の編集</p>
+        <div class="search">
+            <p>アカウントID:
+            <input type="text" name="name"> <input type="button" value="検索" id="button">
+        	</p></div>
+        <div class="registration">
+            <p><input type="number" name="accountID" placeholder="アカウントID"><input type="text" name="name" placeholder="氏名">
+            <input type="password" name="password" placeholder="パスワード"><input type="email" name="mailAd" placeholder="メールアドレス">
+            <input id="male" type="radio" name="gender" value="male"><label for="male">男性</label>
+            <input id="female" type="radio" name="gender" value="female"><label for="female">女性</label>
+            <input type="date" name="birth" placeholder="生年月日"><button type="submit">登録</button></p>
+    
+    
+        </div>
+        <div class="edit">
+            <table border="1">
+                <tr>
+                  <th>アカウントID</th>
+                  <th>氏名</th>
+                  <th>パスワード</th>
+                  <th>メールアドレス</th>
+                  <th>性別</th>
+                  <th>生年月日</th>
+                  <th>住所</th>
+                </tr>
+                <tr>
+                  <td>accountID</td>
+                  <td>name</td>
+                  <td>password</td>
+                  <td>mailaddress</td>
+                  <td>gender</td>
+                  <td>birth</td>
+                  <td>homeAddress</td>
+                  <td><button type="submit">編集</button></td>
+                  <td><button type="submit">削除</button></td>
+                </tr>
+    
+              </table>
+        </div>    
+   
+
+</body>
+</html>

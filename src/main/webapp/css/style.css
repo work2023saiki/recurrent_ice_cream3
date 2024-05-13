@@ -1,0 +1,153 @@
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+body {
+    line-height:1;
+}
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section { 
+    display:block;
+}
+ul {
+    list-style:none;
+}
+blockquote, q {
+    quotes:none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+    text-decoration: none;
+}
+ins {
+    background-color:#fff;
+    color:#000;
+    text-decoration:none;
+}
+mark {
+    background-color:#fff;
+    color:#000; 
+    font-style:italic;
+    font-weight:bold;
+}
+del {
+    text-decoration: line-through;
+}
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+hr {
+    display:block;
+    height:1px;
+    border:0;   
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+input, select {
+    vertical-align:middle;
+}
+
+/*--------------------------------*/
+/*--------------ここから書く------------------*/
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+body {
+    align-items: center;
+    text-align: center;
+    background-color: #EFF0F0;
+    color: #31371B;
+}
+
+.wrapper {
+    max-width: 1280px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 30px;
+}
+
+header h1{
+    font-family: 'Caveat', cursive;
+    font-size: 40px;
+}
+header nav ul{
+    display: flex;
+    justify-content: flex-end;
+}
+
+header nav ul li {
+    list-style-type: none; 
+    padding: 20px;
+}
+
+header nav ul li a {
+    text-decoration: none; 
+    color: #31371B;
+}
+
+header nav ul li a:hover {
+    color: #9F9460;
+}
+.container {
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.item {
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease-out;
+}
+
+.item:hover {
+    transform: scale(1.1);
+}
+
+.img img {
+    width: 150px;
+    height: 150px;
+    padding: 30px;
+    border-radius: 50px;
+    object-fit: cover;
+}
+
+.title {
+    font-size: 10px; 
+}
+
+.img {
+    width: 205px;
+}
