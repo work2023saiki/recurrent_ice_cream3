@@ -49,7 +49,7 @@ public class Login extends HttpServlet {
 		// P305のコード10-16を参照
 		request.setAttribute("errorMsg", "アカウントが見つかりませんでした");
 		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/login.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/account/login.jsp");
         dispatcher.forward(request, response); 
 	}   
 	
