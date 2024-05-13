@@ -22,7 +22,7 @@ public class Login extends HttpServlet {
   private static final long serialVersionUID = 1L; 
   
   protected void doGet(HttpServletRequest request1, HttpServletResponse response1) throws ServletException, IOException {
-	  RequestDispatcher dispatcher = request1.getRequestDispatcher("WEB-INF/jsp/login.jsp");
+	  RequestDispatcher dispatcher = request1.getRequestDispatcher("WEB-INF/jsp/account/login.jsp");
       dispatcher.forward(request1, response1);   //フォワードはjspフォルダ内に置く
   }  
 
