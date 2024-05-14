@@ -71,7 +71,7 @@
                 </tr>
             </c:forEach>
         </table>
-        <input type="submit" name="商品ID" value="まとめて購入" />
+        <input type="submit" name="商品ID" value="まとめてカートに入れる" />
     </form>
 	</main>
             <a href="top.jsp">TOPページへ</a>
