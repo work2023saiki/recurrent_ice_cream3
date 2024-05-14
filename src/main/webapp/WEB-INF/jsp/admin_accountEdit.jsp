@@ -49,6 +49,7 @@
     
     
     <c:if test="${not empty accountList }">
+
     	<table border="1" class="centered-table">
 		
 		    <tr>
