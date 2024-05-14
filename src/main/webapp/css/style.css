@@ -151,3 +151,29 @@ header nav ul li a:hover {
 .img {
     width: 205px;
 }
+
+/* login */
+h2 + p {
+    margin: 20px; 
+}
+input {
+    margin: 10px; 
+}
+a{
+    text-decoration: none; 
+    color: #31371B;
+    margin: 10px;
+}
+
+a:hover {
+    color: #9F9460;
+ }
+ 
+ /* admin_ItemEdit */
+.centered-table{
+	 margin: 0 auto;
+ }
+ 
+ .centered-table th, .centered-table td {
+	 padding: 8px;
+ }

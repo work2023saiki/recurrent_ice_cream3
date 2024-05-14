@@ -74,7 +74,7 @@
         <input type="submit" name="商品ID" value="まとめて購入" />
     </form>
 	</main>
-            <a href="top.jsp">topページへ戻る</a>
+            <a href="top.jsp">TOPページへ</a>
             <a href="User_mypage">マイページへ</a>
     <footer class="wrapper">© 2024 Recurrent ice cream. All rights reserved.</footer>
 </body>

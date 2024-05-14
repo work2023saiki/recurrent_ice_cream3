@@ -98,12 +98,14 @@
                     </script>
                 </select>
               
-                <p><input type="submit" value="会員登録を行う"></p>     
-                <a href="top.jsp" style="display: block; margin-top: 10px;">topページへ戻る</a>
+                <p><input type="submit" value="登録する"></p>     
+                
             </form>
         </div>
     </main>
+    <a href="top.jsp">TOPページへ</a>
     <footer class="wrapper">© 2024 Recurrent ice cream. All rights reserved.</footer>
 </body>
 </html>
+ 
  
