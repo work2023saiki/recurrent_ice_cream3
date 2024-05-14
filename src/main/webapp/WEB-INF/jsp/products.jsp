@@ -47,7 +47,7 @@
     <main class="wrapper">
     	<h2>商品一覧</h2>
 		    <form action="AddToCartServlet" method="post">
-        <table border="1">
+        <table border="1" class="centered-table">
             <tr>
                 <th>商品ID</th>
                 <th>商品名</th>

@@ -46,32 +46,54 @@
 	<header class="wrapper">
     	<h1>Recurrent ice cream</h1>
     </header>
-    <main class="wrapper">
+	<main class="wrapper">
     <h2>注文内容確認</h2>
-    <div>商品名: <%= request.getAttribute("productName") %></div>
-    <div>合計金額: ￥<%= request.getAttribute("totalPrice") %></div>
-    <div>選択した個数: <%= request.getAttribute("selectedQuantity") %>個</div>
-    
-    
+    <table border="1" class="centered-table">
+        <tr>
+            <th>商品名</th>
+            <td><%= request.getAttribute("productName") %></td>
+        </tr>
+        <tr>
+            <th>合計金額</th>
+            <td>￥<%= request.getAttribute("totalPrice") %></td>
+        </tr>
+        <tr>
+            <th>選択した個数</th>
+            <td><%= request.getAttribute("selectedQuantity") %>個</td>
+        </tr>
+    </table>
+
     </br></br></br></br></br>
-    
+
     <!-- お届け先情報 -->
     <h2>お届け先</h2>
-    <p>お名前：<%= request.getAttribute("name") %> 様</p>
-    <p>お届け先：<%= request.getAttribute("homeAddress") %></p>
-    <p>メールアドレス：<%= request.getAttribute("mailAd") %></p>
-    
+    <table border="1" class="centered-table">
+        <tr>
+            <th>お名前</th>
+            <td><%= request.getAttribute("name") %> 様</td>
+        </tr>
+        <tr>
+            <th>お届け先</th>
+            <td><%= request.getAttribute("homeAddress") %></td>
+        </tr>
+        <tr>
+            <th>メールアドレス</th>
+            <td><%= request.getAttribute("mailAd") %></td>
+        </tr>
+    </table>
+
     <!-- 注文確定ボタン -->
     <form action="orderComplete.jsp" method="post">
         <input type="submit" value="注文確定">
     </form>
     
-    <!-- 商品一覧へのリンク -->
-    <a href="ProductServlet">商品一覧へ</a><br>
+
+    </main>
+        <!-- 商品一覧へのリンク -->
+    <a href="ProductServlet">商品一覧へ</a>
     
     <!-- TOPページへのリンク -->
     <a href="LogOut">TOPページへ</a>
-    </main>
     <footer class="wrapper">© 2024 Recurrent ice cream. All rights reserved.</footer>
 </body>
 </html>
