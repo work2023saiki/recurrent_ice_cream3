@@ -34,13 +34,14 @@
 	          <p>お名前とパスワードを入力してください。</p>
 	        </div>
 	        <div class="login_form_btm">
-	          <input type="text" name="name" placeholder="お名前を入力してください"><br>
-	          <input type="password" name="password"placeholder="パスワードを入力してください">
+	          <input type="text" name="name" placeholder="お名前"><br>
+	          <input type="password" name="password"placeholder="パスワード">
 	        </div>
 	        <button type="submit">ログイン</button>
 	     </form>
-	     <a href="top.jsp">topページへ戻る</a>
+	     
      </main>
+     <a href="top.jsp">TOPページへ</a>
      <footer class="wrapper">© 2024 Recurrent ice cream. All rights reserved.</footer>
 </body>
 </html>
