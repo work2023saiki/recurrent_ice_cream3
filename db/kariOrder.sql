@@ -12,13 +12,12 @@ FOREIGN KEY (アカウントID) REFERENCES アカウント(アカウントID),
 FOREIGN KEY (商品ID) REFERENCES 商品(商品ID)
 );
 
-/*
-SELECT 個数 FROM 仮注文
-LEFT JOIN アカウント
-ON　仮注文.アカウントID = アカウント.アカウントID
-LEFT JOIN 商品
-ON 仮注文.商品ID = 商品.商品ID
-*/
 
-SELECT * FROM 仮注文 JOIN 商品 ON 商品.商品ID = 仮注文.商品ID;
+
+
+SELECT アカウントID, 商品名, 商品価格 * 個数 AS 合計金額, 個数
+FROM 仮注文
+JOIN 商品 
+ON 商品.商品ID = 仮注文.商品ID
+WHERE アカウントID = 29;   --29はDAOファイルで「?」になる
 

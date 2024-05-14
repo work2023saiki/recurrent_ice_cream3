@@ -131,6 +131,13 @@ public class AddToCartServlet extends HttpServlet {
         }
         //System.out.println(kosuList);
         
+        
+        
+        
+        
+        
+        
+        
         RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/order_confirmation.jsp");
     	dispatcher.forward(request, response);
     	
