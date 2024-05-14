@@ -6,10 +6,10 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 
-//「まとめてカートに入れる」ボタンを押したとき、仮注文テーブルに一時保存するDAO。
-public class PurchaseDAO extends ConfigDB {
+
+public class CartShowDAO extends ConfigDB {
   
-    public boolean create(int accountID, int itemID, int kosu) {
+    public boolean show(int accountID, int itemID, int kosu) {
         // JDBCドライバを読み込む
         ReadJDBC_Driver();
 
