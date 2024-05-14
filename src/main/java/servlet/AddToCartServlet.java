@@ -49,7 +49,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import beans.AccountBean;
 import beans.Product;
+import dao.PurchaseDAO;
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -103,6 +106,10 @@ public class AddToCartServlet extends HttpServlet {
 		List<Product> productList = (List<Product>)session.getAttribute("products");
        
         
+        AccountBean accountInfo = (AccountBean)session.getAttribute("accountInfo");
+        int accountID = accountInfo.getAccountID();
+        
+        
         List<String> kosuList = new ArrayList<String>();
         
         // リクエストパラメータを取得
@@ -113,11 +120,19 @@ public class AddToCartServlet extends HttpServlet {
         //https://style.potepan.com/articles/18052.html#JavaintString
         for(int i=0; i < productList.size(); i++) {
            String kosu = request.getParameter(String.valueOf(i));
-           kosuList.add(kosu);
+           int kosu2 = Integer.parseInt(kosu);
+           
+           if(kosu2>0) {
+        	   PurchaseDAO dao = new PurchaseDAO();
+        	   dao.create(accountID, productList.get(i).getId(), kosu2);
+           }
+           
+           //kosuList.add(kosu);
         }
-        System.out.println(kosuList);
+        //System.out.println(kosuList);
         
-    	
+        RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/order_confirmation.jsp");
+    	dispatcher.forward(request, response);
     	
     	
     }

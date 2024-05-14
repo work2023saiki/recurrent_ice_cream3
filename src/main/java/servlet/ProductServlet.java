@@ -18,9 +18,14 @@ import jakarta.servlet.http.HttpSession;
 
 @WebServlet("/ProductServlet")
 public class ProductServlet extends HttpServlet {
+	
+	protected void doGet(HttpServletRequest request1, HttpServletResponse response1) throws ServletException, IOException {
+		  RequestDispatcher dispatcher = request1.getRequestDispatcher("WEB-INF/jsp/products.jsp");
+	      dispatcher.forward(request1, response1);   
+	  }  
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {    
     	// リクエストの処理
-    	try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/recurrent_ice_cream", "root", "moo0921too")) {
+    	try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/recurrent_ice_cream", "root", "adminadmin")) {
     	    ProductDAO productDAO = new ProductDAO(connection);
 
     	    // 商品情報の取得
