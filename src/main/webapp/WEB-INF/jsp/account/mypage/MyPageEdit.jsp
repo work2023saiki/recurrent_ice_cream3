@@ -11,9 +11,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MyPage</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 <body>
-    <h1>マイページ</h1>
+	<header class="wrapper">
+        <h1>Recurrent ice cream</h1>
+    </header>
+    <h2>会員編集</h2>
     
     <form name="MyPageEdit" action="MyPageEdit" method="post">
 	    
@@ -26,6 +30,6 @@
 	    
 	    <button type="submit">保存する</button>
     </form>
-    
+    <footer class="wrapper">© 2024 Recurrent ice cream. All rights reserved.</footer>
 </body>
 </html>
