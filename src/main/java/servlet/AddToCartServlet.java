@@ -50,6 +50,8 @@ import java.util.List;
 
 import beans.AccountBean;
 import beans.Product;
+import beans.PurchaseBean;
+import dao.CartShowDAO;
 import dao.PurchaseDAO;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -127,6 +129,12 @@ public class AddToCartServlet extends HttpServlet {
            
         }
         
+        CartShowDAO dao = new CartShowDAO();
+        List<PurchaseBean> cart = dao.cartInfo(accountID);
+        
+        //System.out.println(cart);
+        //System.out.println(cart.get(0).getItemName());
+   		session.setAttribute("cart", cart);
         
         RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/order_confirmation.jsp");
     	dispatcher.forward(request, response);

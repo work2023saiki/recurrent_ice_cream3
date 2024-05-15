@@ -14,7 +14,7 @@ import beans.PurchaseBean;
 
 public class CartShowDAO extends ConfigDB {
   
-    public boolean show(int accountID) {
+    public List<PurchaseBean> cartInfo(int accountID) {
     	
     	List<PurchaseBean> cartList = new ArrayList<>(); 
     	
@@ -50,11 +50,11 @@ public class CartShowDAO extends ConfigDB {
       	        
       	      }
       	      
-            return true;
+            return cartList;
             
         } catch (SQLException e) {
             e.printStackTrace(); // 適切に例外処理を行う
-          return false; // 挿入失敗
+          return null; // 挿入失敗
         }
         
     }

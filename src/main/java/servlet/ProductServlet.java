@@ -25,7 +25,7 @@ public class ProductServlet extends HttpServlet {
 	  }  
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {    
     	// リクエストの処理
-    	try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/recurrent_ice_cream", "root", "moo0921too")) {
+    	try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/recurrent_ice_cream", "root", "adminadmin")) {
     	    ProductDAO productDAO = new ProductDAO(connection);
 
     	    // 商品情報の取得

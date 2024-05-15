@@ -7,7 +7,7 @@ public class ConfigDB{
     //protectedについて→https://www.sejuku.net/blog/22679
     protected final String JDBC_URL = "jdbc:mysql://localhost:3306/recurrent_ice_cream";
 	protected final String DB_USER = "root";
-	protected final String DB_PASS = "moo0921too";
+	protected final String DB_PASS = "adminadmin";
    
    
    public void ReadJDBC_Driver() {

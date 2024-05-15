@@ -5,7 +5,7 @@ import java.sql.Date;
 public class PurchaseBean {
 	private int accountID;
 	private String itemName;
-	private int TotalPrice;
+	private int totalPrice;
     
     private int itemID;
     private int number;
@@ -19,11 +19,11 @@ public class PurchaseBean {
         this.buyDate = buyDate;
     }
     
-    public PurchaseBean(int accountID, String itemName, int number, int TotalPrice) {
+    public PurchaseBean(int accountID, String itemName, int number, int totalPrice) {
         this.accountID = accountID;
         this.itemName = itemName;
         this.number = number;
-        this.TotalPrice = TotalPrice;
+        this.totalPrice = totalPrice;
     }
 
     // Getters and Setters
@@ -46,11 +46,11 @@ public class PurchaseBean {
     
     
     public int getTotalPrice() {
-        return TotalPrice;
+        return totalPrice;
     }
     
-    public void setTotalPrice(int TotalPrice) {
-        this.TotalPrice = TotalPrice;
+    public void setTotalPrice(int totalPrice) {
+        this.totalPrice = totalPrice;
     }
     public int getitemID() {
         return itemID;
