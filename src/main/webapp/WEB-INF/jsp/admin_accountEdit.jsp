@@ -23,9 +23,9 @@
     <form action="AccountFind" method="post">
         
         
-        <p>アカウントの登録、編集、検索、削除ができるページです</p></br>
+        <p>アカウントの登録、編集、検索、削除ができます</p></br>
         <div class="search">
-            <p>氏名:
+            <p>氏名
             <input type="text" name="氏名" required>
             <button type="submit">検索</button>
             </p>

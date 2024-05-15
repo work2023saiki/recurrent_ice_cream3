@@ -22,11 +22,11 @@
 	    <form action="MyPageEdit3" method="post">
 		    
 		    <% //教科書P366、P449参考。 accountInfoは、Login.javaで作成したセッションスコープ %>
-		    <p>氏名：<input type="text" name="name"  value=<c:out value="${account2.name}" /> placeholder="入力してください" required></p>
+		    <p>氏名<input type="text" name="name"  value=<c:out value="${account2.name}" /> placeholder="入力してください" required></p>
 			          
-		    <p>メールアドレス：<input type="text" name="mailAd" value=<c:out value="${account2.mailAd}" /> placeholder="入力してください" required></p>
+		    <p>メールアドレス<input type="text" name="mailAd" value=<c:out value="${account2.mailAd}" /> placeholder="入力してください" required></p>
 		    
-		    <p>住所：<input type="text" name="building" value=<c:out value="${account2.homeAddress}" /> placeholder="入力してください" required></p>
+		    <p>住所<input type="text" name="building" value=<c:out value="${account2.homeAddress}" /> placeholder="入力してください" required></p>
 		    
 		    <button type="submit" name="button" value=<c:out value="${account2.accountID}"/>>保存する</button>
 	    </form>
