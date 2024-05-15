@@ -19,7 +19,7 @@
     
     <form action="ItemFind" method="post">
     <div class="search">
-        <p>商品名:
+        <p>商品名
         <input type="text" name="name" required> <button type="submit">検索</button>
         </p>
     </div>
@@ -27,6 +27,7 @@
     
     <form action="ItemRegist" method="post">
     <div class="registration">
+    	<p>商品の新規登録</p>
         <p><input type="text" name="itemName" placeholder="商品名" required><input type="text" name="price" placeholder="商品価格" required>
         <input type="text" name="itemExplain" placeholder="商品説明" required>
         <button type="submit">登録</button></p>
