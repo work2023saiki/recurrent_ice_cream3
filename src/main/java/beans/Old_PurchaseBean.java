@@ -2,28 +2,18 @@ package beans;
 
 import java.sql.Date;
 
-public class PurchaseBean {
-	private int accountID;
-	private String itemName;
-	private int TotalPrice;
-    
+public class Old_PurchaseBean {
+    private int accountID;
     private int itemID;
     private int number;
     private Date buyDate;
 
     // Constructor
-    public PurchaseBean(int accountID, int itemID, int number, Date buyDate) {
+    public Old_PurchaseBean(int accountID, int itemID, int number, Date buyDate) {
         this.accountID = accountID;
         this.itemID = itemID;
         this.number = number;
         this.buyDate = buyDate;
-    }
-    
-    public PurchaseBean(int accountID, String itemName, int number, int TotalPrice) {
-        this.accountID = accountID;
-        this.itemName = itemName;
-        this.number = number;
-        this.TotalPrice = TotalPrice;
     }
 
     // Getters and Setters
@@ -35,23 +25,6 @@ public class PurchaseBean {
         this.accountID = accountID;
     }
 
-    
-    public String getItemName() {
-        return itemName;
-    }
-    
-    public void setItemName(String itemName) {
-        this.itemName = itemName;
-    }
-    
-    
-    public int getTotalPrice() {
-        return TotalPrice;
-    }
-    
-    public void setTotalPrice(int TotalPrice) {
-        this.TotalPrice = TotalPrice;
-    }
     public int getitemID() {
         return itemID;
     }
@@ -75,6 +48,4 @@ public class PurchaseBean {
     public void setbuyDate(Date buyDate) {
         this.buyDate = buyDate;
     }
-    
-    
 }

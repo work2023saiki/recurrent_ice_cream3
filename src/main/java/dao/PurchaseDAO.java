@@ -5,6 +5,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+
+//「まとめてカートに入れる」ボタンを押したとき、仮注文テーブルに一時保存するDAO。
 public class PurchaseDAO extends ConfigDB {
   
     public boolean create(int accountID, int itemID, int kosu) {
