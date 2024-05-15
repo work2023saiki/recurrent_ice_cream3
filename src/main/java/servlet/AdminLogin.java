@@ -77,7 +77,13 @@ public class AdminLogin extends HttpServlet {
 	    	//セッションスコープに保存。マイページに表示するため
 	    	HttpSession session = request.getSession();
 	    	
-	    
+     		String[] myArray = { "10代","20代","30代","40代","50代"};
+         	  
+
+    		request.setAttribute("myArray",myArray);
+    		RequestDispatcher dispatcher = request.getRequestDispatcher("admin_page.jsp");
+    		dispatcher.forward(request,response);
+    	
 	    	session.setAttribute("adminInfo", adminInfo);
 	    
 	    	response.sendRedirect("http://localhost:8080/recurrent_ice_cream/admin_page.jsp"); 

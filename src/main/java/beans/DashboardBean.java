@@ -18,18 +18,13 @@ public class DashboardBean implements Serializable{
   public DashboardBean() { }
   
   //ダッシュボード用
-  public DashboardBean(String gender, Date birth,int number, String itemName) {
-    this.gender = gender;
-    this.birth = birth;
-    this.number = number;
-    this.itemName = itemName;
-  }
+//  public DashboardBean(String gender, Date birth,int number, String itemName) {
+//    this.gender = gender;
+//    this.birth = birth;
+//    this.number = number;
+//    this.itemName = itemName;
+//  }
  
-  public DashboardBean(Date birth,String gender) {
-	  this.birth = birth;
-	  this.gender = gender;
-  }
-  
   public DashboardBean(String gender, int number) {
 	  
 	  this.gender = gender;

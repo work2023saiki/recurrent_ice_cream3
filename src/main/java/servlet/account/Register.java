@@ -43,7 +43,6 @@ public class Register extends HttpServlet {
     //https://www.sejuku.net/blog/19633
     //文字列の結合
     String homeAddress =  homeAddress1.concat(homeAddress2); 
-    
     //System.out.println(homeAddress);
     
     //参考サイト：https://qiita.com/ayaka105/items/1a68ed7ad84743dde7d5

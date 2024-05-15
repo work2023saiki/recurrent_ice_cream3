@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
@@ -49,7 +50,7 @@
 	        <p><font color="red"><%= errorMsg %></font></p>
 	        
 	        <% } %>
-            <form class="h-adr">
+            
             <form name="registration" action="Register" method="post">
                 <h2>会員登録</h2>
                 <p>名前</p>
@@ -60,7 +61,14 @@
                 
                 <p>パスワード <span style="font-size: 12px"></span></p>
                 <input type="password" name="password" maxlength="30" placeholder="パスワード" required><br>
- 
+                
+                <label>〒</label>
+                <input type="text" class="p-postal-code" size="8" maxlength="8"><br>
+                <label for="address">住所</label>
+                <input id="address" type="text" name="building1"class="p-region p-locality p-street-address p-extended-address"  required><br>
+                <label for="building">番地/建物名</label>
+                <input id="building" type="text" name="building2" placeholder="番地/建物名" required>
+                
                 <p>性別</p>
                 <input id="male" type="radio" name="gender" value="男性"  required>男性
                 <input id="female" type="radio" name="gender" value="女性"  required>女性
@@ -88,39 +96,17 @@
                         for (var i = 1; i <= 31; i++) {
                             document.write('<option value="' + i + '">' + i + '</option>');
                         }
-                 	</script>
-                 </select>
-				<span class="p-country-name" style="display:none;">Japan</span>
-                    <label>
-                    <p>住所</p>
-                    <span>郵便番号</span>
-                    <input type="text" class="p-postal-code" size="3" maxlength="3">-<input type="text" class="p-postal-code" size="4" maxlength="4"><br>
-              		</label>
-                    <label>
-                      <span>都道府県</span>
-                      <input type="text" class="p-region" readonly /><br>
-                    </label>
-                    <label>
-                      <span>市町村区</span>
-                      <input type="text" class="p-locality" readonly /><br>
-                    </label>
-                    <label>
-                      <span>町域</span>
-                      <input type="text" class="p-street-address" /><br>
-                    </label>
-                    <label>
-                      <span>以降の住所</span>
-                      <input type="text" class="p-extended-address" />
-                    </label>
-                  </form></form>
-               
-            </form></form>
-            
+                    </script>
+                </select>
+              
+                <p><input type="submit" value="登録する"></p>     
+                
+            </form>
         </div>
-        <input type="submit" value="会員登録を行う">   
-          <a href="top.jsp" style="display: block; margin-top: 10px;">topページへ戻る</a>
     </main>
+    <a href="top.jsp">TOPページへ</a>
     <footer class="wrapper">© 2024 Recurrent ice cream. All rights reserved.</footer>
 </body>
 </html>
+ 
  

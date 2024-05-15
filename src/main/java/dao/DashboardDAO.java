@@ -40,7 +40,7 @@ public class DashboardDAO extends ConfigDB{
 	        
             	// SELECT文を準備
             	//購入した個数を男女別,商品IDごとに表示
-            	String sql1 = "select 性別,sum(個数) as 男女別の個数合計\r\n"
+            	String sql = "select 性別,sum(個数) as 男女別の個数合計\r\n"
             		    + "from 購入記録\r\n"
             		    + "where 商品ID = 1\r\n"
             		    + "group by 商品ID,性別" ;
@@ -57,20 +57,19 @@ public class DashboardDAO extends ConfigDB{
 //            	|      1 | 女性 |                8 |
 //            	+--------+------+------------------+
       	
-	             PreparedStatement pStmt = conn.prepareStatement(sql1);
-      
+	             PreparedStatement pStmt = conn.prepareStatement(sql);
+	             
 			     // SELECTを実行し、結果表を取得
-			     ResultSet rs1 = pStmt.executeQuery();
+			     ResultSet rs = pStmt.executeQuery();
       
 				      // 結果表にあるアカウント情報をdashboardInfoインスタンスに保存。
-				      while (rs1.next()) {
+				      while (rs.next()) {
 				    	
-				        String gender = rs1.getString("性別"); 
-			            int number = rs1.getInt("男女別の個数合計");
+				        String gender = rs.getString("性別"); 
+			            int number = rs.getInt("男女別の個数合計");
 				        
 			            dashboardInfo = new DashboardBean(gender, number);
 				        dashboard.add(dashboardInfo);
-				        
 				      } 
             }
 	         

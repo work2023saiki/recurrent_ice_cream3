@@ -22,7 +22,7 @@
   </script>
 </head>
 <body>
-  <header class="wrapper">
+  <class="wrapper">
     <h2>管理者マイページ</h2>
 
  <div class="container">
@@ -30,19 +30,17 @@
     	    
         <ul>
             <li><a href="ItemRegist">商品編集ページへ</a></li> <!-- 商品編集リンク -->
-            <li><a href="AccountFind">アカウント編集ページへ</a> <!-- 会員編集リンク -->
-            <a href="LogOut">ログアウト</a>
+            <li><a href="AccountFind">アカウント編集ページへ</a></li> <!-- 会員編集リンク -->
+            <li><a href="LogOut">ログアウト</a></li>
         </ul>
 
 
   </div> 
-  
-  <div class="content">
-
+ 
  <div style="width:400px">
   <p><canvas id="mychart-bar"></canvas></p>
   </div>
-  <div style="width:350px">
+ <div style="width:350px">
   <p><canvas id="mychart-pie"></canvas></p>
   </div>
 
@@ -51,11 +49,26 @@
 </main>
 
 <script type="text/javascript">
+
+
 var ctx = document.getElementById('mychart-bar');
+
+var myListFromServlet = [
+	<%
+		String[] myArray =(String[])request.getAttribute("myArray");
+		for (int i = 0; i < myArray.length; i++) {
+			%>'<%= myArray[i] %>'<%
+			if (i < myArray.length -1){
+				%>,<%
+			}
+		}
+	%>
+];
+
 var myChart = new Chart(ctx, {
   type: 'bar',
   data: {
-    labels: ['10代', '20代', '30代', '40代', '50代'],
+    labels: myListFromServlet,
     datasets: [{
       label: '超！チョコレート',
       data: [20, 35, 40, 10,20],//売上個数
@@ -79,7 +92,7 @@ var myChart = new Chart(ctx, {
      }],
   },
 });
-
+/*
 var ctx = document.getElementById('mychart-pie');
 var myChart = new Chart(ctx, {
   type: 'pie',
@@ -92,7 +105,7 @@ var myChart = new Chart(ctx, {
     }],
   },
 });
-
+*/
 </script>
 </body>
 </html>
