@@ -37,11 +37,11 @@ public class PurchaseBean {
     }
 
     
-    public int getaccountID() {
+    public int getAccountID() {
         return accountID;
     }
 
-    public void setaccountID(int accountID) {
+    public void setAccountID(int accountID) {
         this.accountID = accountID;
     }
 
@@ -62,27 +62,27 @@ public class PurchaseBean {
     public void setTotalPrice(int totalPrice) {
         this.totalPrice = totalPrice;
     }
-    public int getitemID() {
+    public int getItemID() {
         return itemID;
     }
 
-    public void setitemID(int itemID) {
+    public void setItemID(int itemID) {
         this.itemID = itemID;
     }
 
-    public int getnumber() {
+    public int getNumber() {
         return number;
     }
 
-    public void setnumber(int number) {
+    public void setNumber(int number) {
         this.number = number;
     }
 
-    public Date getbuyDate() {
+    public Date getBuyDate() {
         return buyDate;
     }
 
-    public void setbuyDate(Date buyDate) {
+    public void setBuyDate(Date buyDate) {
         this.buyDate = buyDate;
     }
     
