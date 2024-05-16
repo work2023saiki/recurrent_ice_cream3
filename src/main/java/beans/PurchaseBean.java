@@ -20,8 +20,9 @@ public class PurchaseBean {
         
     }
     
-    public PurchaseBean(int kariID, String itemName, int number, int totalPrice) {
-        this.kariID = kariID;
+    public PurchaseBean(int kariID, int itemID, String itemName, int number, int totalPrice) {
+    	this.kariID = kariID;
+    	this.itemID = itemID;
         this.itemName = itemName;
         this.number = number;
         this.totalPrice = totalPrice;

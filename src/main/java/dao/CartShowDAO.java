@@ -25,11 +25,11 @@ public class CartShowDAO extends ConfigDB {
         try (Connection conn = DriverManager.getConnection(JDBC_URL, DB_USER, DB_PASS)) {
 
 
-            String sql = "SELECT 仮注文ID, 商品名, 個数, 商品価格 * 個数 AS 合計金額   \n"
+            String sql = "SELECT 仮注文ID, 仮注文.商品ID, 商品名, 個数, 商品価格 * 個数 AS 合計金額   \n"
             		+ "FROM 仮注文 \n"
             		+ "JOIN 商品\n"
             		+ "ON 商品.商品ID = 仮注文.商品ID\n"
-            		+ "WHERE アカウントID = ?;";
+            		+ "WHERE アカウントID = ?";
             
             PreparedStatement pStmt = conn.prepareStatement(sql);
             
@@ -40,12 +40,13 @@ public class CartShowDAO extends ConfigDB {
             
               	      
       	      while (rs.next()) {
-      	    	int kariID = rs.getInt("仮注文ID"); 
+      	    	int kariID = rs.getInt("仮注文ID");
+      	    	int ItemID = rs.getInt("商品ID"); 
       	    	String name = rs.getString("商品名");
       	    	int kosu = rs.getInt("個数");
       	    	int TotalPrice = rs.getInt("合計金額");    
       	          
-      	        PurchaseBean purchase = new PurchaseBean(kariID, name, kosu, TotalPrice);
+      	        PurchaseBean purchase = new PurchaseBean(kariID, ItemID, name, kosu, TotalPrice);
       	        cartList.add(purchase);
       	        
       	      }
