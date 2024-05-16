@@ -18,13 +18,12 @@ public class PurchaseRecordDAO extends ConfigDB {
         // データベースに接続
         try (Connection conn = DriverManager.getConnection(JDBC_URL, DB_USER, DB_PASS)) {
 
-
-            String sql = "INSERT INTO 購入記録 (アカウントID, 商品ID, 個数, 購入日) VALUES (?, ?, ?, ?)";
+        	//http://mysql.javarou.com/dat/000848.html#curdate
+            String sql = "INSERT INTO 購入記録 (アカウントID, 商品ID, 個数, 購入日) VALUES (?, ?, ?, CURRENT_DATE)";
             try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
                 pstmt.setInt(1, rec.getAccountID());
                 pstmt.setInt(2, rec.getItemID());
                 pstmt.setInt(3, rec.getNumber());
-                pstmt.setDate(4, rec.getBuyDate());
                 
                 pstmt.executeUpdate();
                 return true; // 挿入成功

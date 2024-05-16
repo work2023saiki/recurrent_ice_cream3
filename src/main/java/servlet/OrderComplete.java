@@ -3,8 +3,6 @@
 package servlet;
 
 import java.io.IOException;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import beans.AccountBean;
@@ -35,7 +33,9 @@ public class OrderComplete extends HttpServlet {
 	  
 	  int accountID = accountInfo.getAccountID();
 	  
-  	  
+	  DeleteCartItemDAO dao = new DeleteCartItemDAO();
+  	  dao.deleteAll(accountID);
+  	  /*
 	  // 現在日時を取得
       LocalDateTime nowDate = LocalDateTime.now();
       // 表示形式を指定
@@ -44,20 +44,18 @@ public class OrderComplete extends HttpServlet {
               String NowDate1 = dtf.format(nowDate);
               
               java.sql.Date buyDate = java.sql.Date.valueOf(NowDate1);
-	  
+	  */
       for(int i=0; i < cart.size(); i++) {
     	  int itemID = cart.get(i).getItemID();
     	  int kosu = cart.get(i).getNumber();
     	  
-    	  PurchaseBean rec = new PurchaseBean(accountID, itemID, kosu, buyDate);
+    	  PurchaseBean rec = new PurchaseBean(accountID, itemID, kosu);
     	     
     	  PurchaseRecordDAO dao2 = new PurchaseRecordDAO();
       	  dao2.addRecord(rec);
       }        
   	  
-  	  
-      DeleteCartItemDAO dao = new DeleteCartItemDAO();
-  	  dao.delete(accountID);
+      
   	  
   	  RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/orderCompleted.jsp");
       dispatcher.forward(request, response); 

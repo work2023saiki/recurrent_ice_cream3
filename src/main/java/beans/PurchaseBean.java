@@ -13,11 +13,11 @@ public class PurchaseBean {
     private Date buyDate;
 
     // Constructor
-    public PurchaseBean(int accountID, int itemID, int number, Date buyDate) {
+    public PurchaseBean(int accountID, int itemID, int number) {
         this.accountID = accountID;
         this.itemID = itemID;
         this.number = number;
-        this.buyDate = buyDate;
+        
     }
     
     public PurchaseBean(int kariID, String itemName, int number, int totalPrice) {

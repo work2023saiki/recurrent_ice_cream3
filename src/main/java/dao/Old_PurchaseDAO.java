@@ -19,10 +19,10 @@ public class Old_PurchaseDAO extends ConfigDB {
 
             String sql = "INSERT INTO 購入記録 (アカウントID, 商品ID, 個数, 購入日) VALUES (?, ?, ?, ?)";
             try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
-                pstmt.setInt(1, purchase.getaccountID());
-                pstmt.setInt(2, purchase.getitemID());
-                pstmt.setInt(3, purchase.getnumber());
-                pstmt.setDate(4, new java.sql.Date(purchase.getbuyDate().getTime())); // 購入日
+                pstmt.setInt(1, purchase.getAccountID());
+                pstmt.setInt(2, purchase.getItemID());
+                pstmt.setInt(3, purchase.getNumber());
+                pstmt.setDate(4, new java.sql.Date(purchase.getBuyDate().getTime())); // 購入日
                 pstmt.executeUpdate();
                 return true; // 挿入成功
             }

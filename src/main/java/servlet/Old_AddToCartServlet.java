@@ -46,66 +46,51 @@
 package servlet;
 
 import java.io.IOException;
-import java.util.List;
 
-import beans.AccountBean;
-import beans.Product;
-import beans.PurchaseBean;
-import dao.CartShowDAO;
-import dao.PurchaseDAO;
-import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
 
-@WebServlet("/AddToCartServlet")
-public class AddToCartServlet extends HttpServlet {
+@WebServlet("/Old_AddToCartServlet")
+public class Old_AddToCartServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         
-    	HttpSession session = request.getSession();
-    	
-    	
-        @SuppressWarnings("unchecked")
-		List<Product> productList = (List<Product>)session.getAttribute("products");
-       
-        
-        AccountBean accountInfo = (AccountBean)session.getAttribute("accountInfo");
-        int accountID = accountInfo.getAccountID();
-        
-        
-        // リクエストパラメータを取得
-        request.setCharacterEncoding("UTF-8");
-        
-        
-        //https://www.sejuku.net/blog/15715#index_id0
-        //https://style.potepan.com/articles/18052.html#JavaintString
-        for(int i=0; i < productList.size(); i++) {
-           String kosu = request.getParameter(String.valueOf(i));
-           int kosu2 = Integer.parseInt(kosu);
-           
-           //もし、1個以上だったら
-           if(kosu2>0) {
-        	   PurchaseDAO dao = new PurchaseDAO();
-        	   dao.create(accountID, productList.get(i).getId(), kosu2);
-           }
-           
+    	/*
+    	// カートに追加された商品の情報を取得
+        Map<String, Integer> cartItems = new HashMap<>();
+        for (Map.Entry<String, String[]> entry : request.getParameterMap().entrySet()) {
+            String paramName = entry.getKey();
+            if (paramName.startsWith("quantity_")) {
+                String productId = paramName.substring("quantity_".length());
+                int quantity = Integer.parseInt(entry.getValue()[0]);
+                cartItems.put(productId, quantity);
+            }
+        }
+
+        // 購入情報をPurchaseBeanにセット
+        PurchaseBean purchase = new PurchaseBean();
+        purchase.setCartItems(cartItems);
+
+        // PurchaseDAOを使用してデータベースに購入記録を保存
+        PurchaseDAO purchaseDAO = new PurchaseDAO();
+        boolean purchaseSuccess = purchaseDAO.savePurchase(purchase);
+
+        // 注文完了ページにリダイレクト
+        if (purchaseSuccess) {
+            response.sendRedirect("order_confirmation.jsp");
+        } else {
+
         }
         
-        CartShowDAO dao = new CartShowDAO();
-        List<PurchaseBean> cart = dao.cartInfo(accountID);
-        
-        //System.out.println(cart);
-        //System.out.println(cart.get(0).getItemName());
-   		session.setAttribute("cart", cart);
-        
-        RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/order_confirmation.jsp");
-    	dispatcher.forward(request, response);
+        */
+    	
+    	
+    	
     	
     	
     }
