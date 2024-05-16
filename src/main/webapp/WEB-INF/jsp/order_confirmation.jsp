@@ -20,6 +20,8 @@
 
 
     <c:forEach var="cart2" items="${cart}" varStatus="status">
+    
+      <form action="DeleteCartItem" method="post">
 	    <table border="1" class="centered-table">
 	        <tr>
 	            <th>商品名</th>
@@ -35,7 +37,15 @@
 	        </tr>
 	        
 	        <c:set value="${ alltotal + cart2.totalPrice }" var="alltotal"></c:set>
+	        <input type="hidden" name="loopIndex" value=<c:out value="${status.index}"/>>
+
 	    </table>
+	    
+	    
+	    <button type="submit" name="button" value=<c:out value="${cart2.kariID}"/> >削除</button>
+	    
+	    </form>
+	    
 	    
 	    </br></br></br>
 	    
@@ -62,7 +72,7 @@
     </table>
 
     <!-- 注文確定ボタン -->
-    <form action="orderComplete.jsp" method="post">
+    <form action="OrderComplete" method="post">
         <input type="submit" value="注文確定">
     </form>
     
