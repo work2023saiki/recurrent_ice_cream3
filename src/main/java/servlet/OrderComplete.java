@@ -3,9 +3,12 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.List;
 
 import beans.AccountBean;
+import beans.PurchaseBean;
 import dao.DeleteCartItemDAO;
+import dao.PurchaseRecordDAO;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -25,9 +28,34 @@ public class OrderComplete extends HttpServlet {
       HttpSession session = request.getSession();
 	  
 	  AccountBean accountInfo = (AccountBean) session.getAttribute("accountInfo");
+	  @SuppressWarnings("unchecked")
+	  List<PurchaseBean> cart = (List<PurchaseBean>) session.getAttribute("cart");
+	  
+	  int accountID = accountInfo.getAccountID();
 	  
 	  DeleteCartItemDAO dao = new DeleteCartItemDAO();
-  	  dao.delete(accountInfo.getAccountID());
+  	  dao.deleteAll(accountID);
+  	  /*
+	  // 現在日時を取得
+      LocalDateTime nowDate = LocalDateTime.now();
+      // 表示形式を指定
+      DateTimeFormatter dtf =
+          DateTimeFormatter.ofPattern("yyyy-MM-dd");
+              String NowDate1 = dtf.format(nowDate);
+              
+              java.sql.Date buyDate = java.sql.Date.valueOf(NowDate1);
+	  */
+      for(int i=0; i < cart.size(); i++) {
+    	  int itemID = cart.get(i).getItemID();
+    	  int kosu = cart.get(i).getNumber();
+    	  
+    	  PurchaseBean rec = new PurchaseBean(accountID, itemID, kosu);
+    	     
+    	  PurchaseRecordDAO dao2 = new PurchaseRecordDAO();
+      	  dao2.addRecord(rec);
+      }        
+  	  
+      
   	  
   	  RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/orderCompleted.jsp");
       dispatcher.forward(request, response); 

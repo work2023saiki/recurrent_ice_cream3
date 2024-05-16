@@ -22,11 +22,11 @@
 	    <form action="ItemEdit3" method="post">
 		    
 		    <% //教科書P366、P449参考。 accountInfoは、Login.javaで作成したセッションスコープ %>
-		    <p>商品名：<input type="text" name="name"  value=<c:out value="${Item.itemName}" /> placeholder="入力してください" required></p>
+		    <p>商品名<input type="text" name="name"  value=<c:out value="${Item.itemName}" /> placeholder="入力してください" required></p>
 			          
-		    <p>価　格：<input type="text" name="price" value=<c:out value="${Item.price}" /> placeholder="入力してください" required></p>
+		    <p>価　格<input type="text" name="price" value=<c:out value="${Item.price}" /> placeholder="入力してください" required></p>
 		    
-		    <p>説　明：<input type="text" name="itemExplain" value=<c:out value="${Item.itemExplain}" /> placeholder="入力してください" required></p>
+		    <p>説　明<input type="text" name="itemExplain" value=<c:out value="${Item.itemExplain}" /> placeholder="入力してください" required></p>
 		    
 		    <button type="submit" name="button" value=<c:out value="${Item.itemID}"/>>保存する</button>
 		 

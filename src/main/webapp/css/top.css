@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+
 html, body, div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 abbr, address, cite, code,
@@ -21,8 +23,8 @@ time, mark, audio, video {
 body {
     line-height:1;
 }
-article,aside,details,figcaption,figure,
-footer,header,hgroup,menu,nav,section { 
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section { 
     display:block;
 }
 ul {
@@ -81,7 +83,6 @@ input, select {
 /*--------------------------------*/
 /*--------------ここから書く------------------*/
 
-@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
 body {
     align-items: center;
     text-align: center;
@@ -96,7 +97,7 @@ body {
     padding: 30px;
 }
 
-header h1{
+header h1 {
     font-family: 'Caveat', cursive;
     font-size: 40px;
 }

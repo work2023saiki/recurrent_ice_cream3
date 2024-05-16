@@ -37,8 +37,7 @@
 	        </tr>
 	        
 	        <c:set value="${ alltotal + cart2.totalPrice }" var="alltotal"></c:set>
-	        <input type="hidden" name="loopIndex" value=<c:out value="${status.index}"/>>
-
+	        
 	    </table>
 	    
 	    
