@@ -18,7 +18,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 
-//管理者が商品情報を編集
+//「注文完了」ボタンを押したとき実行される
 @WebServlet("/OrderComplete")
 public class OrderComplete extends HttpServlet {
   private static final long serialVersionUID = 1L; 
@@ -33,21 +33,17 @@ public class OrderComplete extends HttpServlet {
 	  
 	  int accountID = accountInfo.getAccountID();
 	  
+	  //仮注文テーブルから削除
 	  DeleteCartItemDAO dao = new DeleteCartItemDAO();
   	  dao.deleteAll(accountID);
-  	  /*
-	  // 現在日時を取得
-      LocalDateTime nowDate = LocalDateTime.now();
-      // 表示形式を指定
-      DateTimeFormatter dtf =
-          DateTimeFormatter.ofPattern("yyyy-MM-dd");
-              String NowDate1 = dtf.format(nowDate);
-              
-              java.sql.Date buyDate = java.sql.Date.valueOf(NowDate1);
-	  */
+  	  
+
+  	  
+  	  //購入記録に追加
       for(int i=0; i < cart.size(); i++) {
     	  int itemID = cart.get(i).getItemID();
     	  int kosu = cart.get(i).getNumber();
+    	  
     	  
     	  PurchaseBean rec = new PurchaseBean(accountID, itemID, kosu);
     	     
