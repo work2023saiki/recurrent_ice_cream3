@@ -3,7 +3,11 @@ package beans;
 import java.sql.Date;
 
 public class PurchaseBean {
-    private int accountID;
+	private int kariID;
+	private int accountID;
+	private String itemName;
+	private int totalPrice;
+    
     private int itemID;
     private int number;
     private Date buyDate;
@@ -15,8 +19,24 @@ public class PurchaseBean {
         this.number = number;
         this.buyDate = buyDate;
     }
+    
+    public PurchaseBean(int kariID, String itemName, int number, int totalPrice) {
+        this.kariID = kariID;
+        this.itemName = itemName;
+        this.number = number;
+        this.totalPrice = totalPrice;
+    }
 
     // Getters and Setters
+    public int getKariID() {
+        return kariID;
+    }
+
+    public void setKariID(int kariID) {
+        this.kariID = kariID;
+    }
+
+    
     public int getaccountID() {
         return accountID;
     }
@@ -25,6 +45,23 @@ public class PurchaseBean {
         this.accountID = accountID;
     }
 
+    
+    public String getItemName() {
+        return itemName;
+    }
+    
+    public void setItemName(String itemName) {
+        this.itemName = itemName;
+    }
+    
+    
+    public int getTotalPrice() {
+        return totalPrice;
+    }
+    
+    public void setTotalPrice(int totalPrice) {
+        this.totalPrice = totalPrice;
+    }
     public int getitemID() {
         return itemID;
     }
@@ -48,4 +85,6 @@ public class PurchaseBean {
     public void setbuyDate(Date buyDate) {
         this.buyDate = buyDate;
     }
+    
+    
 }

@@ -46,11 +46,12 @@
 package servlet;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 import beans.AccountBean;
 import beans.Product;
+import beans.PurchaseBean;
+import dao.CartShowDAO;
 import dao.PurchaseDAO;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -110,8 +111,6 @@ public class AddToCartServlet extends HttpServlet {
         int accountID = accountInfo.getAccountID();
         
         
-        List<String> kosuList = new ArrayList<String>();
-        
         // リクエストパラメータを取得
         request.setCharacterEncoding("UTF-8");
         
@@ -122,14 +121,20 @@ public class AddToCartServlet extends HttpServlet {
            String kosu = request.getParameter(String.valueOf(i));
            int kosu2 = Integer.parseInt(kosu);
            
+           //もし、1個以上だったら
            if(kosu2>0) {
         	   PurchaseDAO dao = new PurchaseDAO();
         	   dao.create(accountID, productList.get(i).getId(), kosu2);
            }
            
-           //kosuList.add(kosu);
         }
-        //System.out.println(kosuList);
+        
+        CartShowDAO dao = new CartShowDAO();
+        List<PurchaseBean> cart = dao.cartInfo(accountID);
+        
+        //System.out.println(cart);
+        //System.out.println(cart.get(0).getItemName());
+   		session.setAttribute("cart", cart);
         
         RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/order_confirmation.jsp");
     	dispatcher.forward(request, response);

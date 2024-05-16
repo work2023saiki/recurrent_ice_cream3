@@ -1,0 +1,14 @@
+/* テーブルを作成するSQL。仮注文登録できたらこのテーブルに情報を入れる。
+
+*/
+
+CREATE TABLE 購入記録 (購入記録ID INTEGER(10)  NOT NULL AUTO_INCREMENT,
+アカウントID INTEGER(10)  NOT NULL,
+商品ID INTEGER(5) NOT NULL,
+個数 INTEGER(5)  NOT NULL,
+購入日 DATE NOT NULL, 
+
+PRIMARY KEY (仮注文ID),
+FOREIGN KEY (アカウントID) REFERENCES アカウント(アカウントID),
+FOREIGN KEY (商品ID) REFERENCES 商品(商品ID)
+);
