@@ -8,15 +8,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin MyPage</title>
-  <link rel="stylesheet" href="css/top.css" type="text/css">
+  <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 <body>
-
-    <h1>商品の編集ページ</h1>
+	<header class="wrapper">
+        <h1>Recurrent ice cream</h1>
+    </header>
+	<main class="wrapper">
+    <h2>商品の編集ページ</h2>
     
     <form action="ItemFind" method="post">
     <div class="search">
-        <p>商品名:
+        <p>商品名
         <input type="text" name="name" required> <button type="submit">検索</button>
         </p>
     </div>
@@ -24,6 +27,7 @@
     
     <form action="ItemRegist" method="post">
     <div class="registration">
+    	<p>商品の新規登録</p>
         <p><input type="text" name="itemName" placeholder="商品名" required><input type="text" name="price" placeholder="商品価格" required>
         <input type="text" name="itemExplain" placeholder="商品説明" required>
         <button type="submit">登録</button></p>
@@ -32,7 +36,7 @@
     
 
     </br></br>
-    <a href="LogOut">ログアウト</a>
+    
     <c:if test="${not empty Msg}">
     
       <p><font color="blue"><c:out value="${Msg}" /></font></p>
@@ -46,7 +50,7 @@
     </c:if> 
     
     <c:if test="${not empty ItemList }">
-    <table border="1">
+    <table border="1" class="centered-table">
 		
 		    <tr>
 		        <th>商品ID</th>
@@ -77,7 +81,8 @@
 	
     
 
-</main>
-<footer class="wrapper">© 2024 Recurrent ice cream. All rights reserved.</footer> 
+	</main>
+	<a href="LogOut">ログアウト</a>
+	<footer class="wrapper">© 2024 Recurrent ice cream. All rights reserved.</footer> 
 </body>
 </html>

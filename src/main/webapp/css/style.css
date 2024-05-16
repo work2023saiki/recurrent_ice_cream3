@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+
 html, body, div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 abbr, address, cite, code,
@@ -21,8 +23,8 @@ time, mark, audio, video {
 body {
     line-height:1;
 }
-article,aside,details,figcaption,figure,
-footer,header,hgroup,menu,nav,section { 
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section { 
     display:block;
 }
 ul {
@@ -81,7 +83,6 @@ input, select {
 /*--------------------------------*/
 /*--------------ここから書く------------------*/
 
-@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
 body {
     align-items: center;
     text-align: center;
@@ -96,28 +97,30 @@ body {
     padding: 30px;
 }
 
-header h1{
+header h1 {
     font-family: 'Caveat', cursive;
     font-size: 40px;
 }
-header nav ul{
+
+header nav ul {
     display: flex;
     justify-content: flex-end;
 }
 
 header nav ul li {
-    list-style-type: none; 
+    list-style-type: none;
     padding: 20px;
 }
 
 header nav ul li a {
-    text-decoration: none; 
+    text-decoration: none;
     color: #31371B;
 }
 
 header nav ul li a:hover {
     color: #9F9460;
 }
+
 .container {
     margin: 0 auto;
     display: flex;
@@ -145,9 +148,52 @@ header nav ul li a:hover {
 }
 
 .title {
-    font-size: 10px; 
+    font-size: 10px;
 }
 
 .img {
     width: 205px;
 }
+
+/* login */
+h2 + p {
+    margin: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: #31371B;
+    margin: 10px;
+}
+
+a:hover {
+    color: #9F9460;
+}
+
+.centered-table {
+    margin: 0 auto;
+}
+
+.centered-table th, .centered-table td {
+    padding: 8px;
+}
+
+input[type="text"], input[type="name"], input[type="password"], select {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 10px;
+}
+
+label, p {
+    margin-top: 10px;
+}
+
+form {
+    max-width: 400px;
+    margin: auto;
+    padding: 30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+ 

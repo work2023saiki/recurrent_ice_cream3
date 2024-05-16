@@ -12,7 +12,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>登録アカウントの確認、編集</title>
-    <link rel="stylesheet" href="css/top.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 <body>
 <header class="wrapper">
@@ -23,14 +23,14 @@
     <form action="AccountFind" method="post">
         
         
-        <p>アカウントの登録、編集、検索、削除ができるページです</p></br>
+        <p>アカウントの登録、編集、検索、削除ができます</p></br>
         <div class="search">
-            <p>氏名:
+            <p>氏名
             <input type="text" name="氏名" required>
             <button type="submit">検索</button>
             </p>
             </br>
-            <a href="Register">アカウント登録ページへ</a>
+            
         </div>
         
     </form>
@@ -49,7 +49,8 @@
     
     
     <c:if test="${not empty accountList }">
-    <table border="1">
+
+    	<table border="1" class="centered-table">
 		
 		    <tr>
 		        <th>アカウントID</th>
@@ -83,9 +84,11 @@
 	</c:if>
 	
 	</br></br>
-	<a href="LogOut">ログアウト</a>
+	
 		
 </main>
+	<a href="Register">アカウント登録ページへ</a>
+	<a href="LogOut">ログアウト</a>
 <footer class="wrapper">© 2024 Recurrent ice cream. All rights reserved.</footer> 
    
 </body>

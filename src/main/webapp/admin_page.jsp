@@ -5,23 +5,14 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin MyPage</title>
-    <header class="wrapper">
-        <h1>Recurrent ice cream</h1>
-    </header>
+  	<title>Admin MyPage</title>
   <link rel="stylesheet" href="css/sidebar.css" type="text/css">
-  <script
-  src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js"
-  integrity="sha512-VMsZqo0ar06BMtg0tPsdgRADvl0kDHpTbugCBBrL55KmucH6hP9zWdLIWY//OTfMnzz6xWQRxQqsUFefwHuHyg=="
-  crossorigin="anonymous">
-  </script>
-  <script
-  src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@next/dist/chartjs-adapter-date-fns.bundle.min.js">
-  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js" integrity="sha512-VMsZqo0ar06BMtg0tPsdgRADvl0kDHpTbugCBBrL55KmucH6hP9zWdLIWY//OTfMnzz6xWQRxQqsUFefwHuHyg==" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@next/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
 </head>
 <body>
+<<<<<<< HEAD
   <class="wrapper">
     <h2>管理者マイページ</h2>
 
@@ -146,5 +137,6 @@ var myChart = new Chart(ctx, {
 
 
 </script>
+
 </body>
 </html>

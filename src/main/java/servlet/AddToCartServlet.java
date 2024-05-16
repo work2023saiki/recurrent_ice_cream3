@@ -46,10 +46,14 @@
 package servlet;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
+import beans.AccountBean;
 import beans.Product;
+import beans.PurchaseBean;
+import dao.CartShowDAO;
+import dao.PurchaseDAO;
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -103,7 +107,9 @@ public class AddToCartServlet extends HttpServlet {
 		List<Product> productList = (List<Product>)session.getAttribute("products");
        
         
-        List<String> kosuList = new ArrayList<String>();
+        AccountBean accountInfo = (AccountBean)session.getAttribute("accountInfo");
+        int accountID = accountInfo.getAccountID();
+        
         
         // リクエストパラメータを取得
         request.setCharacterEncoding("UTF-8");
@@ -113,11 +119,25 @@ public class AddToCartServlet extends HttpServlet {
         //https://style.potepan.com/articles/18052.html#JavaintString
         for(int i=0; i < productList.size(); i++) {
            String kosu = request.getParameter(String.valueOf(i));
-           kosuList.add(kosu);
+           int kosu2 = Integer.parseInt(kosu);
+           
+           //もし、1個以上だったら
+           if(kosu2>0) {
+        	   PurchaseDAO dao = new PurchaseDAO();
+        	   dao.create(accountID, productList.get(i).getId(), kosu2);
+           }
+           
         }
-        System.out.println(kosuList);
         
-    	
+        CartShowDAO dao = new CartShowDAO();
+        List<PurchaseBean> cart = dao.cartInfo(accountID);
+        
+        //System.out.println(cart);
+        //System.out.println(cart.get(0).getItemName());
+   		session.setAttribute("cart", cart);
+        
+        RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/order_confirmation.jsp");
+    	dispatcher.forward(request, response);
     	
     	
     }

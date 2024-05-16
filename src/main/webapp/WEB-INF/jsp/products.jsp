@@ -47,7 +47,7 @@
     <main class="wrapper">
     	<h2>商品一覧</h2>
 		    <form action="AddToCartServlet" method="post">
-        <table border="1">
+        <table border="1" class="centered-table">
             <tr>
                 <th>商品ID</th>
                 <th>商品名</th>
@@ -71,10 +71,10 @@
                 </tr>
             </c:forEach>
         </table>
-        <input type="submit" name="商品ID" value="まとめて購入" />
+        <input type="submit" name="商品ID" value="まとめてカートに入れる" />
     </form>
 	</main>
-            <a href="top.jsp">topページへ戻る</a>
+            <a href="top.jsp">TOPページへ</a>
             <a href="User_mypage">マイページへ</a>
     <footer class="wrapper">© 2024 Recurrent ice cream. All rights reserved.</footer>
 </body>

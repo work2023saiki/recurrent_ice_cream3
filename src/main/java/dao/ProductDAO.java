@@ -25,7 +25,7 @@ public class ProductDAO {
                 Product product = new Product();
                 product.setId(rs.getInt("商品ID"));
                 product.setName(rs.getString("商品名"));
-                product.setPrice(rs.getInt("単価"));
+                product.setPrice(rs.getInt("商品価格"));
                 product.setDescription(rs.getString("商品説明"));
                 products.add(product);
             }
