@@ -51,7 +51,7 @@
 	        <% } %>
             
             <form name="registration" action="Register" method="post">
-                <h2>会員登録</h2>
+                <h2>会員登録</h2><br>
                 <p>名前</p>
                 <input type="text" name="name" maxlength="10" placeholder="山田太郎" required>
                 
@@ -68,7 +68,7 @@
                 <label for="building">番地/建物名</label>
                 <input id="building" type="text" name="building2" placeholder="番地/建物名" required>
                 
-                <p>性別</p>
+                <p>性別</p><br>
                 <input id="male" type="radio" name="gender" value="男性"  required>男性
                 <input id="female" type="radio" name="gender" value="女性"  required>女性
 
