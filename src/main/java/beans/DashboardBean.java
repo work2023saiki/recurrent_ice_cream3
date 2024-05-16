@@ -14,6 +14,7 @@ public class DashboardBean implements Serializable{
   private Date birth;
   private int number;
   private String itemName;
+  private int nendai;
 
   public DashboardBean() { }
   
@@ -30,6 +31,13 @@ public class DashboardBean implements Serializable{
 	  this.gender = gender;
 	  this.number = number;
   }
+  
+ public DashboardBean(int number,String itemName, int nendai) {
+	  
+	  this.number = number;
+	  this.itemName = itemName;
+	  this.nendai = nendai;
+  }
 
   //ゲッターとセッター 
   public String getGender() { return gender; }
@@ -44,5 +52,7 @@ public class DashboardBean implements Serializable{
   public String getitemName() { return itemName;}
   public void setitemName(String itemName) { this.itemName = itemName; }
 
+  public int getnendai() { return nendai;}
+  public void setnendai(int nendai) { this.nendai = nendai; }
   
 }

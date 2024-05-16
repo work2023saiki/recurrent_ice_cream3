@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -36,6 +36,24 @@
 
 
   </div> 
+  
+<form method="get" action="">
+
+<p>
+<select name="example" required>
+<option value="">選択してください</option>
+<option>10代</option>
+<option>20代</option>
+<option>30代</option>
+<option>40代</option>
+<option>50代</option>
+</select>
+</p>
+
+<p><input type="submit" value="表示する"></p>
+
+</form>  
+  
  
  <div style="width:400px">
   <p><canvas id="mychart-bar"></canvas></p>
@@ -92,7 +110,27 @@ var myChart = new Chart(ctx, {
      }],
   },
 });
-/*
+
+//円グラフ
+//①男性・フレーバー別
+
+var ctx = document.getElementById('mychart-pie');
+
+
+var myChart = new Chart(ctx, {
+  type: 'pie',
+  data: {
+    labels: ['超！チョコレート', 'ごろごろクッキー＆クリーム','お～い抹茶','しゃりしゃりいちご','ザ・プレミアムリッチバニラ',],
+    datasets: [{
+      data: [10,20,30,20,20],
+      backgroundColor: ['#6c3524', '#48f','#6BBA82','#e73562','#e8c59c'],
+      weight: 100,
+    }],
+  },
+});
+
+
+//②女性・フレーバー別
 var ctx = document.getElementById('mychart-pie');
 var myChart = new Chart(ctx, {
   type: 'pie',
@@ -105,7 +143,8 @@ var myChart = new Chart(ctx, {
     }],
   },
 });
-*/
+
+
 </script>
 </body>
 </html>
