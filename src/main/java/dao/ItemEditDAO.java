@@ -27,7 +27,7 @@ public class ItemEditDAO extends ConfigDB{
       
     	
       // SELECT文を準備
-      String sql = "UPDATE 商品 SET 商品名 = ?, 単価 = ?, 商品説明 = ?  WHERE 商品ID = ? ";
+      String sql = "UPDATE 商品 SET 商品名 = ?, 商品価格 = ?, 商品説明 = ?  WHERE 商品ID = ? ";
         
       PreparedStatement pStmt = conn.prepareStatement(sql);
       

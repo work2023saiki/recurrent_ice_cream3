@@ -89,7 +89,7 @@ public class AddToCartServlet extends HttpServlet {
            String kosu = request.getParameter(String.valueOf(i));
            int kosu2 = Integer.parseInt(kosu);
            
-           //もし、1個以上だったら
+           //もし、1個以上だったら仮注文に追加
            if(kosu2>0) {
         	   PurchaseDAO dao = new PurchaseDAO();
         	   dao.create(accountID, productList.get(i).getId(), kosu2);
@@ -97,11 +97,11 @@ public class AddToCartServlet extends HttpServlet {
            
         }
         
+        
         CartShowDAO dao = new CartShowDAO();
         List<PurchaseBean> cart = dao.cartInfo(accountID);
         
-        //System.out.println(cart);
-        //System.out.println(cart.get(0).getItemName());
+        
    		session.setAttribute("cart", cart);
         
         RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/order_confirmation.jsp");

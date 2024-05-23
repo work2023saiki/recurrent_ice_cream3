@@ -15,7 +15,7 @@
 	    <h2>購入手続き完了</h2>
 	    <p>ありがとうございました。<br>またのご利用を心よりお待ちしております。</p>
 	    </main>
-		 <a href="top.jsp">TOPページへ</a>
+		 <a href="LogOut">TOPページへ</a>
 	     <footer class="wrapper">© 2024 Recurrent ice cream. All rights reserved.</footer>
 	</body>
 </html>	

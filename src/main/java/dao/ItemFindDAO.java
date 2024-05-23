@@ -27,7 +27,7 @@ public class ItemFindDAO extends ConfigDB{
     	
       // SELECT文を準備。
       //https://tech.pjin.jp/blog/2017/06/23/preparedstatement_problem_solution/
-      String sql = "SELECT 商品ID, 商品名, 単価, 商品説明  FROM 商品 WHERE 商品名 like ?";
+      String sql = "SELECT 商品ID, 商品名, 商品価格, 商品説明  FROM 商品 WHERE 商品名 like ?";
 
         
       PreparedStatement pStmt = conn.prepareStatement(sql);
@@ -44,7 +44,7 @@ public class ItemFindDAO extends ConfigDB{
 
 	        int itemID = rs.getInt("商品ID"); 
 	    	String name = rs.getString("商品名");
-	    	int price = rs.getInt("単価");
+	    	int price = rs.getInt("商品価格");
 	        String itemExplain = rs.getString("商品説明");
 	        
 	          

@@ -26,7 +26,7 @@ public class ItemRegisterDAO extends ConfigDB{
     try (Connection conn = DriverManager.getConnection(JDBC_URL, DB_USER, DB_PASS)) {
       
       // SELECT文を準備
-      String sql = "INSERT INTO 商品(商品名, 単価, 商品説明)\r\n"
+      String sql = "INSERT INTO 商品(商品名, 商品価格, 商品説明)\r\n"
       		        + "VALUES (?, ?, ?)";
         
       PreparedStatement pStmt = conn.prepareStatement(sql);
