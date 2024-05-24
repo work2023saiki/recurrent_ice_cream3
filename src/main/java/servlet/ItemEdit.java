@@ -59,7 +59,8 @@ public class ItemEdit extends HttpServlet {
      	 
     	  ItemBean item = new ItemBean(itemID, name, itemprice, Explain);
     	         
-    	  ItemEditDAO dao = new ItemEditDAO();	    
+    	  ItemEditDAO dao = new ItemEditDAO();
+    	  //主キーである「itemID」を利用して更新する
     	  dao.update(item);
     	  
     	  //https://magazine.techacademy.jp/magazine/18607#sec3

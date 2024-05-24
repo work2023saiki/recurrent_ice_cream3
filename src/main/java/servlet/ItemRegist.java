@@ -28,9 +28,7 @@ public class ItemRegist extends HttpServlet {
     String explain = request.getParameter("itemExplain");
     
     int price1 = Integer.valueOf(price);
-    System.out.println(name);
-    System.out.println(price1);
-    System.out.println(explain);
+    
     //Accountインスタンスaccountに入力内容を保存
     ItemBean item = new ItemBean(name, price1, explain);
      
@@ -38,22 +36,14 @@ public class ItemRegist extends HttpServlet {
 
     boolean newItem = dao.itemRegist(item);   //dao.create(account)がTrueで、アカウント登録される。
 	
-    //登録OK
-    if(newItem) {
-    	request.setAttribute("Msg", "登録しました！もう一度検索してください");
-    	
-		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/admin_ItemEdit.jsp");
-        dispatcher.forward(request, response);
-	}
+    //登録OK。　P305のコード10-16を参照
+    if(newItem) { request.setAttribute("Msg", "登録しました！");}
 	
     //登録できないとき
-	else {
-		// P305のコード10-16を参照
-		request.setAttribute("errorMsg", "商品登録できませんでした");
-				
-		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/admin_ItemEdit.jsp");
-        dispatcher.forward(request, response);
-    }
+	else { request.setAttribute("errorMsg", "商品登録できませんでした");}
 	
+    RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/admin_ItemEdit.jsp");
+    dispatcher.forward(request, response);
+    
   }
 }
