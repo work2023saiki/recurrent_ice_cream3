@@ -34,7 +34,6 @@ public class ItemFind extends HttpServlet {
 	    String name = request.getParameter("name");
 	    
 	    
-	    //データベースに接続。アカウント情報を見つけて取得する。
 	    ItemFindDAO dao = new ItemFindDAO();
 		List<ItemBean> ItemList = dao.findItem(name);
 		
@@ -42,20 +41,15 @@ public class ItemFind extends HttpServlet {
 		if (ItemList.isEmpty()) {
 			// P305のコード10-16を参照
 			request.setAttribute("errorMsg", "商品が見つかりませんでした");
-			
-			RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/admin_ItemEdit.jsp");
-	        dispatcher.forward(request, response); 
 		}   
 		
 		else {
-			
 			HttpSession session = request.getSession();
-			session.setAttribute("ItemList", ItemList);
-			
-			// JSPにフォワード
-		    RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/admin_ItemEdit.jsp");
-		    dispatcher.forward(request, response);
+			session.setAttribute("ItemList", ItemList);		
 		}
 		
+		// JSPにフォワード
+	    RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/admin_ItemEdit.jsp");
+	    dispatcher.forward(request, response);
   }
 }

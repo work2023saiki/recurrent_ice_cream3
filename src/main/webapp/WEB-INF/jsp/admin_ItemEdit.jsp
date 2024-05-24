@@ -67,10 +67,10 @@
 		            <td><c:out value="${item.itemName}" /></td>
 		            <td><c:out value="${item.price}"/></td>
 		            <td><c:out value="${item.itemExplain}" /></td>
-		            <td><button type="submit" formaction="ItemEdit2">編集</button></td>
+		            <td><button type="submit" formaction="ItemEdit">編集</button></td>
 		            <td><button type="submit" name="button" value=<c:out value="${item.itemID}"/> formaction="DeleteItem">削除</button></td>
                  
-                    <input type="hidden" name="loopIndex" value=<c:out value="${status.index}"/>>	        
+                    <input type="hidden" name="LoopIndex" value=<c:out value="${status.index}"/>>	        
 		        </form>
 		        
 		        </tr>
