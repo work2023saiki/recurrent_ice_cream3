@@ -17,9 +17,14 @@ import jakarta.servlet.http.HttpServletResponse;
 public class User_mypage extends HttpServlet {
   private static final long serialVersionUID = 1L; 
   
-  protected void doGet(HttpServletRequest request1, HttpServletResponse response1) throws ServletException, IOException {
-	  RequestDispatcher dispatcher = request1.getRequestDispatcher("WEB-INF/jsp/account/mypage/user_mypage.jsp");
-      dispatcher.forward(request1, response1);   
+  //「会員情報編集」をクリックしたら実行
+  protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	  RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/account/mypage/user_mypage.jsp");
+      dispatcher.forward(request, response);   
   }
-  
+  //「戻る」ボタン押したとき実行
+  protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	  RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/account/mypage/user_mypage.jsp");
+      dispatcher.forward(request, response);   
+  }
 }  
