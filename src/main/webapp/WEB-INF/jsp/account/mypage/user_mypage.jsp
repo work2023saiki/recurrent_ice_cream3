@@ -19,6 +19,10 @@
 	<main class="wrapper">
 	    <h2>マイページ</h2>
 	    
+	    <c:if test="${not empty Msg}">
+            <p><font color="blue"><c:out value="${Msg}" /></font></p>
+    	</c:if>
+    	 
 	    <% //教科書P366、P449参考。 accountInfoは、Login.javaで作成したセッションスコープ %>
 	    <table border="1" class="centered-table">
 	
@@ -46,6 +50,7 @@
     
   
      </main>
+      <a href="LogOut">TOPページへ</a>
       <a href="MyPageEdit">会員情報編集</a>
       <a href="DeleteAccount">退会する</a>
       

@@ -19,7 +19,6 @@ public class MyPageEdit extends HttpServlet {
   private static final long serialVersionUID = 1L; 
   
   protected void doGet(HttpServletRequest request1, HttpServletResponse response1) throws ServletException, IOException { 
-	  
 	  RequestDispatcher dispatcher = request1.getRequestDispatcher("WEB-INF/jsp/account/mypage/MyPageEdit.jsp");
       dispatcher.forward(request1, response1);   
   }  
@@ -31,23 +30,19 @@ public class MyPageEdit extends HttpServlet {
 	    String mailAd = request.getParameter("mailAd");	    
 	    String homeAd = request.getParameter("building");
 	    
-	    //セッションスコープからアカウントIDを取得する。
 	    HttpSession session = request.getSession();
 	    AccountBean accountInfo = (AccountBean)session.getAttribute("accountInfo");
 	    
-	    int accountID = accountInfo.getAccountID();
-	    
-	  //accountに入力内容を保存
-	    AccountBean account = new AccountBean(accountID, name, mailAd, homeAd);
-	     
-	    MyPageEditDAO dao = new MyPageEditDAO();	    
-	    dao.update(account);
-
-    	//user_mypage.jspに更新内容を表示
-    	accountInfo.setName(name);
+	    //変更内容をマイページに表示させる
+	    accountInfo.setName(name);
     	accountInfo.setMailAd(mailAd);
     	accountInfo.setHomeAddress(homeAd);
-    	
+	   	     
+	    MyPageEditDAO dao = new MyPageEditDAO();	    
+	    dao.update(accountInfo);
+	    
+	    request.setAttribute("Msg", "編集完了!");
+
     	RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/account/mypage/user_mypage.jsp");
         dispatcher.forward(request, response);
 	    

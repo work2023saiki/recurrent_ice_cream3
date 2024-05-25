@@ -28,7 +28,8 @@
 	    
 	    <p>住所：<input type="text" name="building" value=<c:out value="${accountInfo.homeAddress}" /> placeholder="入力してください" required></p>
 	    
-	    <button type="submit">保存する</button>
+	    <button type="submit" formaction="MyPageEdit">保存する</button>
+	    <button type="submit" formaction="User_mypage">戻る</button>
     </form>
     <footer class="wrapper">© 2024 Recurrent ice cream. All rights reserved.</footer>
 </body>
