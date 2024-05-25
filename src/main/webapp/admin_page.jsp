@@ -12,7 +12,7 @@
   <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@next/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
 </head>
 <body>
-<<<<<<< HEAD
+
   <class="wrapper">
     <h2>管理者マイページ</h2>
 

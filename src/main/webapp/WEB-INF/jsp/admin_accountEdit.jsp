@@ -72,9 +72,9 @@
 		            <td><c:out value="${account.birth}"/></td>
 		            <td><c:out value="${account.homeAddress}"/></td>
 		            <td><button type="submit" formaction="MyPageEdit2">編集</button></td>
-		            <td><button type="submit" name="button" value=<c:out value="${account.accountID}"/> formaction="DeleteAccount2">削除</button></td>
+		            <td><button type="submit" formaction="DeleteAccount2">削除</button></td>
                  
-                    <input type="hidden" name="loopIndex" value=<c:out value="${status.index}"/>>	        
+                    <input type="hidden" name="LoopIndex" value=<c:out value="${status.index}"/>>	        
 		        </form>
 		        
 		        </tr>
