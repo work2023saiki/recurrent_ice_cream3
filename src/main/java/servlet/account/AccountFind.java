@@ -31,29 +31,21 @@ public class AccountFind extends HttpServlet {
 	    request.setCharacterEncoding("UTF-8");
 	    String name = request.getParameter("氏名");
 	    
-	    
 	    //データベースに接続。アカウント情報を見つけて取得する。
 	    AccountFindDAO dao = new AccountFindDAO();
 		List<AccountBean> accountList = dao.findAccount(name);
 		
-		
 		if (accountList.isEmpty()) {
-			// P305のコード10-16を参照
 			request.setAttribute("errorMsg", "アカウントが見つかりませんでした");
-			
-			RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/admin_accountEdit.jsp");
-	        dispatcher.forward(request, response); 
 		}   
 		
 		else {
-			
 			HttpSession session = request.getSession();
 			session.setAttribute("accountList", accountList);
-			
-			// JSPにフォワード
-		    RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/admin_accountEdit.jsp");
-		    dispatcher.forward(request, response);
 		}
 		
+		// JSPにフォワード
+	    RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/admin_accountEdit.jsp");
+	    dispatcher.forward(request, response);
   }
 }

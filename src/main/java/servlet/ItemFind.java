@@ -1,7 +1,5 @@
 //「スッキリわかるサーブレット＆JSP入門」P279のコード10-5を参考
 
-
-
 package servlet;
 
 import java.io.IOException;

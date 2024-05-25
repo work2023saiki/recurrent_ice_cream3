@@ -19,16 +19,18 @@
 	</header>
     <main class="wrapper">
     	<h2>アカウント編集</h2>
-	    <form action="MyPageEdit3" method="post">
+	    <form action="MyPageEdit2" method="post">
 		    
 		    <% //教科書P366、P449参考。 accountInfoは、Login.javaで作成したセッションスコープ %>
-		    <p>氏名<input type="text" name="name"  value=<c:out value="${account2.name}" /> placeholder="入力してください" required></p>
+		    <p>氏名<input type="text" name="name"  value=<c:out value="${account.name}" /> placeholder="入力してください" required></p>
 			          
-		    <p>メールアドレス<input type="text" name="mailAd" value=<c:out value="${account2.mailAd}" /> placeholder="入力してください" required></p>
+		    <p>メールアドレス<input type="text" name="mailAd" value=<c:out value="${account.mailAd}" /> placeholder="入力してください" required></p>
 		    
-		    <p>住所<input type="text" name="building" value=<c:out value="${account2.homeAddress}" /> placeholder="入力してください" required></p>
+		    <p>住所<input type="text" name="building" value=<c:out value="${account.homeAddress}" /> placeholder="入力してください" required></p>
 		    
-		    <button type="submit" name="button" value=<c:out value="${account2.accountID}"/>>保存する</button>
+		    <button type="submit" name="Save" value=<c:out value="${account.accountID}"/>>保存する</button>
+	    
+	        <input type="hidden" name="LoopIndex" value=<c:out value="${LoopIndex}"/>>
 	    </form>
     </main>
     <footer class="wrapper">© 2024 Recurrent ice cream. All rights reserved.</footer>

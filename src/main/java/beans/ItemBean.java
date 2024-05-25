@@ -18,7 +18,7 @@ public class ItemBean implements Serializable{
   public ItemBean() { }
   
   
-  //商品検索で使う
+  //商品検索、編集で使う
   public ItemBean(int itemID, String itemName, int price, String itemExplain) {
 	    this.itemID = itemID;
 	    this.itemName = itemName;
